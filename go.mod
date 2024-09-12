@@ -1,7 +1,7 @@
 module github.com/Portshift/klar
 
 go 1.13
-
+asd
 require (
 	github.com/GoogleCloudPlatform/docker-credential-gcr v1.5.0
 	github.com/aws/aws-sdk-go v1.19.11
