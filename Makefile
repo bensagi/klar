@@ -8,7 +8,7 @@ TARGET_OS ?= linux
 build:
 	GOOS=$(TARGET_OS) CGO_ENABLED=0 go build -o $(BINARY) $(SOURCE)
 
-# builds the current dev docker version
+# builds the current dev docker versionasd
 build-docker:
 	docker build --build-arg BUILD_DATE=$(shell date -u +"%Y-%m-%dT%H:%M:%SZ") \
 		--build-arg VCS_REF=$(shell git rev-parse --short HEAD) \
