@@ -47,7 +47,6 @@ func executeScan(conf *config) ([]*clair.Vulnerability, error) {
 }
 
 func main() {
-	initLogs()
 
 	result := &forwarding.ImageVulnerabilities{
 		Success:  false,
