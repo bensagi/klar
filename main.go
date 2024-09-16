@@ -36,7 +36,7 @@ func executeScan(conf *config) ([]*clair.Vulnerability, error) {
 	c := clair.NewClair(conf.ClairAddr, conf.ClairTimeout)
 	vulnerabilities, err = c.Analyse(image)
 	if err != nil {
-		log.Errorf("Failed to analyze using API: %s", err)
+		log.Errorf("Failed to analyze using API and content: %s", err)
 	} else {
 		
 	}
