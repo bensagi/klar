@@ -27,9 +27,6 @@ func getImageName() (string, error) {
 
 func executeScan(conf *config) ([]*clair.Vulnerability, error) {
 	image, err := docker.NewImage(&conf.DockerConfig)
-	if err != nil {
-		return nil, fmt.Errorf("failed to parse name: %v", err)
-	}
 
 	err = image.Pull()
 	if err != nil {
