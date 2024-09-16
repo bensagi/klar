@@ -17,7 +17,8 @@ ARG BUILD_DATE
 ARG VCS_REF
 LABEL org.label-schema.build-date=$BUILD_DATE \
     org.label-schema.name="klar" \
-    org.label-schema.description="Simple tool to analyze images stored in a private or public Docker registry for security vulnerabilities using Clair" \
+    org.label-schema.desc
+    ription="Simple tool to analyze images stored in a private or public Docker registry for security vulnerabilities using Clair" \
     org.label-schema.url="https://github.com/Portshift/klar" \
     org.label-schema.vcs-ref=$VCS_REF \
     org.label-schema.vcs-url="https://github.com/Portshift/klar"
