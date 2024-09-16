@@ -84,7 +84,6 @@ func main() {
 
 func initLogs() {
 	if os.Getenv(optionKlarTrace) == "true" {
-		log.SetLevel(log.DebugLevel)
 	}
 }
 
