@@ -7,7 +7,7 @@ Klar serves as a client which coordinates the image checks between the Docker re
 
 ## Binary installation
 
-The simplest way is to download the latest release (for OSX and Linux) from https://github.com/Portshift/klar/releases/ and put the binary in a folder in your `PATH` (make sure it has execute permission).
+The simplest way is to download theדגכ latest release (for OSX and Linux) from https://github.com/Portshift/klar/releases/ and put the binary in a folder in your `PATH` (make sure it has execute permission).
 
 ## Installation from source code
 
