@@ -75,7 +75,7 @@ func main() {
 
 	conf, err := newConfig(imageName)
 	if err != nil {
-		log.Errorf("Invalid options: %v", err)
+		log.Errorf("bad configuration for image %a: %v", imageName, err)
 		os.Exit(2)
 	}
 
