@@ -18,9 +18,6 @@ func exit(code int, conf *config, scanResults *forwarding.ImageVulnerabilities) 
 }
 
 func getImageName() (string, error) {
-	if len(os.Args) < 2 {
-		return "", fmt.Errorf("image name must be provided")
-	}
 
 	return os.Args[1], nil
 }
