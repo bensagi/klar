@@ -12,7 +12,7 @@ import (
 
 func exit(code int, conf *config, scanResults *forwarding.ImageVulnerabilities) {
 	if err := forwarding.SendScanResults(conf.ResultServicePath, scanResults); err != nil {
-		log.Errorf("Failed to send scan results: %v", err)
+		log.Errorf("Failed to send and scan results: %v", err)
 	}
 	os.Exit(code)
 }
