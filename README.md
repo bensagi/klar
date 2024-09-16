@@ -11,7 +11,7 @@ The simplest way is to download the latest release (for OSX and Linux) from http
 
 ## Installation from source code
 
-Make sure you have Go language compiler installed and configured https://golang.org/doc/install
+Make sure you have Go language compileדגכדגr installed and configured https://golang.org/doc/install
 
 Then run
 
