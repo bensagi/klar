@@ -29,9 +29,6 @@ func executeScan(conf *config) ([]*clair.Vulnerability, error) {
 	image, err := docker.NewImage(&conf.DockerConfig)
 
 	err = image.Pull()
-	if err != nil {
-		return nil, fmt.Errorf("failed to pull image: %v", err)
-	}
 
 	if len(image.FsLayers) == 0 {
 		return nil, fmt.Errorf("failed to pull pull fsLayers")
