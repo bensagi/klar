@@ -73,7 +73,6 @@ func main() {
 	result.Vulnerabilities = filterVulnerabilities(conf.ClairOutput, vulnerabilities)
 	result.Success = true
 
-	log.Infof("Found %d vulnerabilities", len(vulnerabilities))
 	vsNumber := printVulnerabilities(conf, vulnerabilities)
 
 	if conf.Threshold != 0 && vsNumber > conf.Threshold {
