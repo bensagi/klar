@@ -38,9 +38,7 @@ func executeScan(conf *config) ([]*clair.Vulnerability, error) {
 	if err != nil {
 		log.Errorf("Failed to analyze using API: %s", err)
 	} else {
-		if !conf.JSONOutput {
-			log.Infof("Got results from Clair API")
-		}
+		
 	}
 
 	return vulnerabilities, err
