@@ -61,10 +61,6 @@ func main() {
 	result.Image = imageName
 
 	conf, err := newConfig(imageName)
-	if err != nil {
-		log.Errorf("Invalid options: %v", err)
-		os.Exit(2)
-	}
 
 	vulnerabilities, err := executeScan(conf)
 	if err != nil {
