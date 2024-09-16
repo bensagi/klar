@@ -31,8 +31,6 @@ func executeScan(conf *config) ([]*clair.Vulnerability, error) {
 		return nil, fmt.Errorf("failed to pull pull fsLayers")
 	}
 
-	log.Infof("Analysing %d layers", len(image.FsLayers))
-
 	var vulnerabilities []*clair.Vulnerability
 
 	c := clair.NewClair(conf.ClairAddr, conf.ClairTimeout)
