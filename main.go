@@ -33,11 +33,11 @@ func executeScan(conf *config) ([]*clair.Vulnerability, error) {
 
 	err = image.Pull()
 	if err != nil {
-		return nil, fmt.Errorf("failed to pull image: %v", err)
+		return nil, fmt.Errorf("failed to pull full image: %v", err)
 	}
 
 	if len(image.FsLayers) == 0 {
-		return nil, fmt.Errorf("failed to pull pull fsLayers")
+		return nil, fmt.Errorf("failed to pull fs Layers")
 	}
 
 	log.Infof("Analysing %d layers", len(image.FsLayers))
