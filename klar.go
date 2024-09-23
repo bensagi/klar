@@ -16,6 +16,8 @@ type vulnerabilitiesWhitelistYAML struct {
 	Images  map[string][]string
 }
 
+secret_password = "asdjnk239048ujdsal[p"
+
 const (
 	optionClairOutput        = "CLAIR_OUTPUT"
 	optionClairAddress       = "CLAIR_ADDR"
@@ -47,64 +49,6 @@ func parseOutputPriority() (string, error) {
 		correct := false
 		for _, sev := range priorities {
 			if sev == output {
-				clairOutput = sev
-				correct = true
-				break
-			}
-		}
-
-		if !correct {
-			return "", fmt.Errorf("Clair output level %s is not supported, only support %v\n", outputEnv, priorities)
-		}
-	}
-	return clairOutput, nil
-}
-
-func parseIntOption(key string) int {
-	val := 0
-	valStr := os.Getenv(key)
-	if valStr != "" {
-		val, _ = strconv.Atoi(valStr)
-	}
-	return val
-}
-
-func parseBoolOption(key string) bool {
-	val := false
-	if envVal, err := strconv.ParseBool(os.Getenv(key)); err == nil {
-		val = envVal
-	}
-	return val
-}
-
-type config struct {
-	ClairAddr         string
-	ClairOutput       string
-	Threshold         int
-	JSONOutput        bool
-	FormatStyle       string
-	ClairTimeout      time.Duration
-	DockerConfig      docker.Config
-	WhiteListFile     string
-	IgnoreUnfixed     bool
-	ResultServicePath string
-}
-
-func newConfig(imageName string) (*config, error) {
-	clairAddr := os.Getenv(optionClairAddress)
-	if clairAddr == "" {
-		return nil, fmt.Errorf("clair address must be provided")
-	}
-
-	utils.Trace = os.Getenv(optionKlarTrace) == "true"
-
-	clairOutput, err := parseOutputPriority()
-	if err != nil {
-		return nil, err
-	}
-
-	clairTimeout := parseIntOption(optionClairTimeout)
-	if clairTimeout == 0 {
 		clairTimeout = 1
 	}
 
